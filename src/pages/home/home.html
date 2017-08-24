@@ -1,14 +1,100 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Animation
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-slides pager>
+
+  <!--simon css animate-->
+  <ion-slide>
+    <button ion-button (click)="animateElem()">Animate</button>
+    <ion-card #myElement style="margin-top:10vh; background:#f3f3f3">
+      <ion-card-header>Animation Card</ion-card-header>
+      <ion-card-content>
+        <p>content with animation :3 :3 :3 </p>
+        <img src="http://thaeger.com/wp-content/uploads/2014/12/Star-Wars-by-Alexandr-Gorelenkov-Stormtroopers-600x600.png" alt="">
+      </ion-card-content>
+
+    </ion-card>
+  </ion-slide>
+  <!--simon css animate-->
+  <ion-slide>
+    <p class="sometimes">wobble</p>
+    <div class="contCss">
+      <div animates #animation2="animates" text-center>
+       <button ion-button (click)="animation2.start({type: 'wobble', duration: '1000'})">Click me</button>
+      </div>
+    </div>
+   </ion-slide>
+<!--simon css animate-->
+  <ion-slide>
+    <p class="sometimes">rubberBand</p>
+    <div class="contCss">
+      <div animates #animation="animates" text-center>
+       <button ion-button (click)="animation.start({type: 'rubberBand', duration: '1000'})">Click me</button>
+      </div>
+    </div>
+   </ion-slide>
+  <!--simon angular animation-->
+  <ion-slide>
+    <button ion-button (click)="toggleVisible()">Toggle it!</button>
+    <p [@myVisibility]="visibleState" class="sometimes">I am sometimes here and sometines there :)</p>
+  </ion-slide>
+      <!--Practica-->
+  <ion-slide>
+    <div text-center class="cont">
+
+      <!--************* MARCO *************-->
+      <svg width="239px" height="241px" viewBox="0 0 239 241" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+          <desc>Created with Sketch.</desc>
+          <defs></defs>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <path d="M2.84217094e-14,-2.84217094e-14 L238.895197,3.00907381e-14 L238.895197,185.384615 L238.895197,241 L-3.06062663e-14,241 L-1.69844257e-14,185.384615 L2.84217094e-14,-2.84217094e-14 Z M9,9 L9,185 L230,185 L230,9 L9,9 Z M228.783581,232.076923 L228.783581,195 L9,195 L9,232.076923 L228.783581,232.076923 Z" id="Combined-Shape" fill="#9B9B9B"></path>
+          </g>
+      </svg>
+
+     <!--************* MONTAÑA *************-->
+    <svg width="210px" height="97px" viewBox="0 0 210 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mountain" #Mountain>
+        <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path d="M210,57.0651113 L210,45.1725996 L161.456501,2.00736538 C160.520031,1.17776923 159.287332,0.765288462 158.01641,0.793096154 C156.750265,0.848711538 155.555789,1.39096154 154.700544,2.29934615 L107.905753,52.0148654 L85.244155,30.0328846 C83.457219,28.3041731 80.6000324,28.2161154 78.7079824,29.8289615 L0.0557909635,97 L15.3282406,97 L82.4386959,39.6871923 L131.660662,87.4283654 C133.528823,89.2405 136.548458,89.2405 138.416618,87.4283654 C140.284779,85.6162308 140.284779,82.6871538 138.416618,80.8750192 L115.449234,58.5964231 L159.31517,12 L210,57.0651113 Z" id="Combined-Shape" fill="#7ED321"></path>
+        </g>
+    </svg>
+
+
+     <!--************* SOL *************-->
+      <svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sun" #theSun>
+          <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+          <desc>Created with Sketch.</desc>
+          <defs></defs>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <path d="M27.18,54.0480769 C42.10506,54.0480769 54.24534,42.0384615 54.24534,27.2788462 C54.24534,12.5096154 42.10506,0.5 27.18,0.5 C12.25494,0.5 0.11466,12.5096154 0.11466,27.2740385 C0.11466,42.0384615 12.25494,54.0480769 27.18,54.0480769 Z M27.18,10.1153846 C36.74448,10.1153846 44.52534,17.8173077 44.52534,27.2740385 C44.52534,36.7307692 36.74448,44.4326923 27.18,44.4326923 C17.61552,44.4326923 9.83466,36.7355769 9.83466,27.2788462 C9.83466,17.8221154 17.61552,10.1153846 27.18,10.1153846 Z" id="Shape" fill="#F6A623" fill-rule="nonzero"></path>
+          </g>
+      </svg>
+    </div>
+    <!--<div class="cont2">
+      <button #myButton ion-button color="primary" (click)="changesStyle()"> Animate M</button>
+    </div>-->
+    <div class="cont2">
+      <button #myButton ion-button color="primary" (click)="changesStyle()"> Animate</button>
+    </div>
+  </ion-slide>
+
+
+
+
+
+</ion-slides>
+
+
+
+
+
 </ion-content>

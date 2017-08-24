@@ -1,3 +1,53 @@
 page-home {
-
+.slide-zoom{
+    position: absolute;
+    top:0;
+    left:0;
+}
+ button{
+     opacity: 1;
+    //  pathis.renderer.setElementStyle(this.myButton.nativeElement, 'padding', '50px');
+     transition: 5s cubic-bezier(0.58,-0.01, 0.58, 1) !important;
+     position: relative;
+     top:50px;
+ }
+//  #Page-1{
+//      opacity: 1;
+//      animation: 3s ease fadeIn;
+//      animation-fill-mode: forwards;
+//  }
+}
+.cont{
+    margin: 0 auto;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+.cont2{
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+}
+.sun{
+    position: absolute;
+    left: 22%;
+    top: 6%;
+}
+.mountain{
+    position: absolute;
+    bottom: 114px;
+    right: 61px;
+}
+.contCss{
+    display: flex;
+    justify-content: center;
+}
+.sometimes{
+    margin-top: 10vh;
+    font-size: 1.5em;
+}
+@keyframes fadeIn {
+    100% {
+        opacity:0
+    }
 }
